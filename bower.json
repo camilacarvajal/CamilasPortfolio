@@ -1,0 +1,20 @@
+{
+  "name": "CamilasPortfolio",
+  "version": "0.0.0",
+  "authors": [
+    "Camila C <camila.bear@gmail.com>"
+  ],
+  "description": "bower stuff",
+  "license": "MIT",
+  "homepage": "camilacarvajal.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
