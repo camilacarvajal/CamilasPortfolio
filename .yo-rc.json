@@ -1,0 +1,18 @@
+{
+  "generator-mocha": {},
+  "generator-assemble": {
+    "projectName": "camilasportfolio",
+    "projectDesc": "The best project ever.",
+    "authorLogin": "camilacarvajal",
+    "installPlugin": true,
+    "author": {
+      "name": "Camila C",
+      "login": "assemble",
+      "email": "camila.carvajal@fyber.com"
+    },
+    "plugins": [
+      "assemble-contrib-permalinks",
+      "assemble-contrib-sitemap"
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+$footer-height : 75px;
+
+.footer {
+  background: $black;
+  color: $white;
+  position: relative;
+
+  .container{
+    line-height: $footer-height;
+    position: relative;
+  }
+
+  a{
+    color: rgba(255,255,255,.8);
+    font-size:16px;
+
+    &:hover{ color: $white}
+  }
+
+  p{
+    bottom:1em;
+    text-align: center;
+    margin: 0;
+    z-index: 2;
+    font-size:16px;
+  }
+  ul {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+  }
+  li {
+    display: inline-block;
+    vertical-align: top;
+    line-height: $footer-height;
+
+    &:hover{
+      color: $blue;
+    }
+
+    a {
+      display: block;
+      font-size: 1.1em;
+      padding: 0 1.75em;
+      font-weight: 500;
+      color: $white;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+  }
+}

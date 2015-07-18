@@ -1,0 +1,40 @@
+body{
+  height: 100%;
+  margin:0;
+}
+
+a{
+  text-decoration: none;
+}
+
+.p-section{
+  padding: 40px 0;
+}
+
+.container{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding:0 20px;
+}
+
+.link{
+  cursor: pointer;
+}
+
+.anchor{
+  position: absolute;
+  margin-top: -150px;
+}
+
+hr{
+  margin:2em 0;
+  border: 1px solid $black;
+}
+
+table{
+  width:100%;
+}
+
+.rounded{
+  @include border-radius(100%);
+}

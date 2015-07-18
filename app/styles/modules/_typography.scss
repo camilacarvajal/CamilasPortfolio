@@ -1,0 +1,48 @@
+body{
+  letter-spacing: -.01em;
+  font-family: 'PT Sans', sans-serif;;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased !important;
+  //-webkit-nbsp-mode: space;
+}
+
+h1,h2,h3,h4,h5{
+  font-family: 'PT Sans', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+h1{
+  font-family: 'Pacifico', sans-serif;
+  color: $red;
+  font-size: 2em;
+}
+
+.text--bold{
+  font-weight: 700;
+}
+
+.text--center{
+  text-align: center;
+}
+
+
+p{
+  font-size:1.15em;
+  text-align: left;
+  line-height: 1.7em;
+  letter-spacing: -.05;
+  margin: 0 0 1.5em;
+  color: $black;
+  
+  a{
+    color: $blue;
+    text-decoration: none;
+    transition: all .5s;
+    &:hover{
+      color: $blue;
+    }
+  }
+
+  font-weight: 400;
+}

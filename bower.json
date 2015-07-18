@@ -1,20 +1,21 @@
 {
-  "name": "CamilasPortfolio",
-  "version": "0.0.0",
-  "authors": [
-    "Camila C <camila.bear@gmail.com>"
-  ],
-  "description": "bower stuff",
-  "license": "MIT",
-  "homepage": "camilacarvajal.com",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
+  "name": "camilasportfolio",
+  "private": true,
   "dependencies": {
-    "bootstrap": "~3.3.5"
+    "bootstrap-sass": "~3.3.5",
+    "modernizr": "~2.8.3"
+  },
+  "overrides": {
+    "bootstrap-sass": {
+      "main": [
+        "assets/stylesheets/_bootstrap.scss",
+        "assets/fonts/bootstrap/*",
+        "assets/javascripts/bootstrap.js"
+      ]
+    }
+  },
+  "devDependencies": {
+    "chai": "~3.1.0",
+    "mocha": "~2.2.5"
   }
 }
