@@ -1,12 +1,13 @@
 
-$blue:      #22becc;
 $red:       #DF314D;
 $orange:    #f79441;
-$gray:      #9D968D;
-$black:     #040404;
-$white:     #fff;
-$green:		#91c382;
 $yellow:	#ffc738;
+$green:		#91c382;
+$blue:      #22becc;
+$gray:      #9D968D;
+$black:     #2E2513;
+$white:     #FFFFFF;
+$cream:		#FFF9EC;
 
 .color--red{
   color: $red;
@@ -14,6 +15,10 @@ $yellow:	#ffc738;
 
 .color--orange{
   color: $orange;
+}
+
+.color--yellow{
+  color: $yellow;
 }
 
 .color--blue{
@@ -28,3 +33,10 @@ $yellow:	#ffc738;
   color: $white;
 }
 
+.color--gray{
+  color: $gray;
+}
+
+.color--black{
+  color: $black;
+}
