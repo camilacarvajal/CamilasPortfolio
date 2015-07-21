@@ -9,8 +9,8 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Camila's Portfolio</title>
-	<meta name="title" content="CamilasPortfolio" />
-	<meta name="description" content="Developer, Designer, Dreamer" />
+	<meta name="title" content="Camila Carvajal's online Portfolio" />
+	<meta name="description" content="My name is Camila Carvajal and this is my online portfolio. So far I've fully developed websites on multiple platforms, quality tested GPUs, designed video games from the ground up, and worked with hundreds of talented people. Still I have a strong thirst for knowledge and enjoy learning about game design, software engineering, graphic design practices, UI/UX, animation and above all, people. Please contant me for relavant business opportunities" />
 	<meta property="og:title" content="CamilasPortfolio" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
@@ -24,6 +24,7 @@
 	
 </head>
 <body>
+<?php echo file_get_contents("../images/pencil.svg"); ?>
 
 
 <!-- Navbar component
@@ -40,8 +41,8 @@
 
 
 
-<section class="hero">
-	<img src="images\america.jpg">	
+<section class="hero module parallax">
+	<img src="../images/America.jpg">	
 </section>
 
 <section class="home p-section">
@@ -69,10 +70,30 @@
 <footer class="footer navbar navbar-fixed-bottom">
 	<div class="container">
 		<ul>
-			<li><a href="\compsci.html">Comp Sci</a></li><!--
-			--><li><a href="\design.html">Design</a></li><!--
-			--><li><a href="\photography.html">Photography</a></li><!--
-			--><li><a href="\contact.html">Contact Me</a></li>
+			<li><a href="\index.html">
+				<svg class="icon">
+				  <image xlink:href="../images/home.svg" src="../images/menu-icon.png" alt="Home" class="icon shape-home" width="45" height="45" />
+				</svg>
+				Home
+			</a></li><!--<img src="../images/code.svg" alt="Computer Science" class="icon shape-code">
+						--><li><a href="\compsci.html">
+				<svg class="icon">
+				  <image xlink:href="../images/code.svg" src="../images/menu-icon.png" width="45" height="45" />
+				</svg>
+				Dev Work
+			</a></li><!--
+			--><li><a href="\design.html">
+				<svg class="icon">
+				  <image xlink:href="../images/pencil.svg" src="../images/menu-icon.png" alt="Design" class="icon shape-pencil" width="45" height="45" />
+				</svg>
+				Design
+			</a></li><!--
+			--><li><a href="\contact.html">
+				<svg class="icon">
+				  <image xlink:href="../images/mail.svg" src="../images/menu-icon.png" alt="Contact" class="icon shape-mail" width="45" height="45" />
+				</svg>
+				Contact
+			</a></li>
 		</ul>
 	</div> 
 </footer>
@@ -82,8 +103,9 @@
 
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
-<script src="/bower_components/modernizr/modernizr.js"></script>
-<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/jquery/jquery.js"></script>
+<script src="../bower_components/handlebars/handlebars.runtime.js"></script>
+<script src="/path/to/svg4everybody.ie8.min.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 

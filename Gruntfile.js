@@ -221,6 +221,27 @@ module.exports = function (grunt) {
       }
     },
 
+    svgstore: {
+      options: {
+        prefix : 'shape-', // This will prefix each <g> ID
+        svg: { // will add and overide the the default xmlns="http://www.w3.org/2000/svg" attribute to the resulting SVG
+          viewBox : '0 0 100 100',
+          xmlns: 'http://www.w3.org/2000/svg'
+        }
+      },
+      dist : {
+        files: {
+
+          'dist/images/svg-defs.svg': ['<%= config.app %>/images/svgs/*.svg'],
+        }
+      },
+      serve : {
+        files: {
+          '<%= config.app %>/images/svg-defs.svg': ['<%= config.app %>/images/*.svg'],
+        }
+      }
+    },
+
     postcss: {
       options: {
         map: true,
@@ -269,12 +290,13 @@ module.exports = function (grunt) {
     // Reads HTML for usemin blocks to enable smart builds that automatically
     // concat, minify and revision files. Creates configurations in memory so
     // additional tasks can operate on them
-    useminPrepare: {
-      options: {
-        dest: '<%= config.dist %>'
-      },
-      html: '<%= config.app %>/index.html'
-    },
+    //useminPrepare: {
+    //options: {
+    //    dest: '<%= config.dist %>'
+    //  },
+    //  html: '<%= config.app %>/index.html',
+    // css: ['.tmp/styles/{,*/}*.css']
+    //},
 
     // Performs rewrites based on rev and the useminPrepare configuration
     usemin: {
@@ -338,28 +360,28 @@ module.exports = function (grunt) {
     // By default, your `index.html`'s <!-- Usemin block --> will take care
     // of minification. These next options are pre-configured if you do not
     // wish to use the Usemin blocks.
-    // cssmin: {
-    //   dist: {
-    //     files: {
-    //       '<%= config.dist %>/styles/main.css': [
-    //         '.tmp/styles/{,*/}*.css',
-    //         '<%= config.app %>/styles/{,*/}*.css'
-    //       ]
-    //     }
-    //   }
-    // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= config.dist %>/scripts/scripts.js': [
-    //         '<%= config.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
-    // concat: {
-    //   dist: {}
-    // },
+    cssmin: {
+         dist: {
+             files: {
+                 '<%= config.dist %>/styles/main.css': [
+                     '.tmp/styles/{,*/}*.css',
+                     '<%= config.app %>/styles/{,*/}*.css'
+                 ]
+             }
+         }
+    },
+     uglify: {
+      dist: {
+         files: {
+           '<%= config.dist %>/scripts/scripts.js': [
+             '<%= config.dist %>/scripts/scripts.js'
+           ]
+         }
+       }
+     },
+     concat: {
+       dist: {}
+     },
 
     // Copies remaining files to places other tasks can use
     copy: {
@@ -377,8 +399,7 @@ module.exports = function (grunt) {
             '{,*/}*.html',
             'fonts/{,*/}*.*',
             'scripts/vendor/{,*/}*.*',
-            'images/{,*/}/{,*/}*.*',
-            'announcements/{,*/}/{,*/}*.*'
+            'images/{,*/}/{,*/}*.*'
           ]
         }]
       },
@@ -411,16 +432,16 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up build process
     concurrent: {
       server: [
-        //'babel:dist',
+        'babel:dist',
         'copy:styles',
         'compass'
       ],
       test: [
-        //'babel'
+        'babel',
         'copy:styles'
       ],
       dist: [
-        //'babel',
+        'babel',
         'copy:styles',
         'compass',
         'imagemin',
@@ -453,6 +474,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'concurrent:server',
+      'svgstore:serve',
       'wiredep',
       'postcss',
       'assemble',
@@ -484,15 +506,15 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'assemble',
-    'wiredep',
-    'useminPrepare',
+    'svgstore:dist',
+    //'useminPrepare',
     'concurrent:dist',
     'postcss',
     'concat',
+    'wiredep',
     'cssmin',
     'uglify',
     'copy:dist',
-    'copy:styles',
     'modernizr',
     'filerev',
     'usemin',
