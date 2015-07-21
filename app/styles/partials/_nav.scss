@@ -2,7 +2,7 @@ body{
   padding-top:$footer-height;
 }
 .nav {
-  background-color: $blue;
+  background-color: $green;
   line-height: $footer-height;
   display:block;
   z-index: 1001;
@@ -39,7 +39,7 @@ body{
     }
     &:hover,
     &.current{
-      background: darken($blue, 7%);
+      background: darken($green, 7%);
     }
 
     a {

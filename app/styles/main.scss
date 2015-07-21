@@ -27,7 +27,7 @@ $experimental-support-for-svg: true;
 /* Partials
    ========================================================================== */
 
-
+@import "partials/canvas";
 @import "partials/footer";
 @import "partials/hero";
 @import "partials/nav";
