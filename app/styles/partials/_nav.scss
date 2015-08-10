@@ -2,7 +2,7 @@ body{
   padding-top:$footer-height;
 }
 .nav {
-  background-color: $green;
+  background-color: $red;
   line-height: $footer-height;
   display:block;
   z-index: 1001;
@@ -30,7 +30,7 @@ body{
     display: inline-block;
     vertical-align: top;
 
-    @include transition(background .2s linear);
+    transition: background, .2s, linear;
 
     &.current {
       a {
@@ -39,7 +39,9 @@ body{
     }
     &:hover,
     &.current{
-      background: darken($green, 7%);
+      background: lighten($red, 7%);
+      //opacity: .8;
+      //text-shadow: 5px 5px 4px $white;
     }
 
     a {

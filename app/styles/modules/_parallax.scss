@@ -8,13 +8,21 @@ $heroMobile: 400px;
   	background-size: cover; 	
 }
 
-.homeHero {
+.bigHero {
 	height: $heroHeight;
-	background-image: url("../images/America.jpg");
+	background-image: url("../images/work/America.jpg");
+}
+
+.smallHero {
+	height: $heroHeight/2;
+	background-image: url("../images/silly.jpg");
 }
 
 @media (max-width: 768px) {
-	.homeHero {
+	.bigHero {
 		height: $heroMobile;
+	}
+	.smallHero {
+		height: $heroMobile/2;
 	}
 }

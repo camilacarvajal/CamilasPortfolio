@@ -4,24 +4,17 @@ body{
   background-color:$cream;
 }
 
-a{
-  text-decoration: none;
-  cursor: pointer;
-}
-
 .p-section{
   padding: 40px 0;
-}
-
-.container{
-  max-width: 1000px;
-  margin: 0 auto;
-  padding:0 20px;
 }
 
 .anchor{
   position: absolute;
   margin-top: -150px;
+}
+
+img{
+  max-width: 100%;
 }
 
 hr{
@@ -34,5 +27,5 @@ table{
 }
 
 .rounded{
-  @include border-radius(100%);
+  border-radius: 100%;
 }

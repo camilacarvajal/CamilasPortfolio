@@ -24,7 +24,6 @@
 	
 </head>
 <body>
-<?php echo file_get_contents("../images/pencil.svg"); ?>
 
 
 <!-- Navbar component
@@ -32,26 +31,16 @@
 <header class="nav">
 	<div class="container"><a href="index.html" class="logo">Camila Carvajal</a>
 		<ul>
-			<li><a href="\development.html">Development</a></li><!--
-			--><li><a href="\design.html">Design</a></li><!--
+			<li><a href="\work.html">Work</a></li><!--
+			--><li><a href="\resume.html">Resume</a></li><!--
 			--><li><a href="\contact.html">Contact Me</a></li>
 		</ul>
 	</div> 
 </header>
 
 
-<section class="canvas">
-	<div id="behind">
-		<canvas id="grass"></canvas>
-	</div>
-
-	<div id="dusk"> </div>
-
-	<div id="verticalCenter">
-		<div id="Name">Development
-		    <div id="Info">- Crafting Experiences -</div>
-		</div>
-	</div>
+<section class="homeHero parallax verticalCenter">
+	<h1 class="text--center color--white">Developement</h1>
 </section>
 
 <section class="p-section">
@@ -105,14 +94,13 @@
 
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
-<script src="../bower_components/jquery/jquery.js"></script>
-<script src="../bower_components/handlebars/handlebars.runtime.js"></script>
-<script src="/path/to/svg4everybody.ie8.min.js"></script>
- <script src='https://rawgithub.com/soulwire/sketch.js/master/js/sketch.min.js'></script>
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../bower_components/handlebars/handlebars.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
-<!-- build:js scripts/plugins.js (my added scripts)-->
+<!-- build:js scripts/plugins.js -->
 <script type="text/javascript" src="scripts/main.js"></script>
 <script type="text/javascript" src="scripts/canvas.js"></script>
 <!-- endbuild -->
@@ -121,6 +109,18 @@
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 <!-- end codepen -->
 
+<!-- Start Google Analytics Script -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-65671812-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- end Google Analytics Script -->
 
 </body>
 </html>

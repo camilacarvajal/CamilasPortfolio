@@ -1,10 +1,21 @@
 $footer-height : 40px;
-$footer-mobile: 15px;
+$footer-mobile: 5px;
 
 .footer {
-  background: $gray;
+  background: $blue;
   color: $white;
   position: relative;
+
+  &:before{
+    background-image: url(/images/grass.svg);
+    // background-size: 100% 100%;
+    background-repeat: repeat-x;
+    width: 100%;
+    content: " ";
+    height: 60px;
+    position: absolute;
+    top:-55px;
+  }
 
   .container{
     line-height: $footer-height;
@@ -49,7 +60,7 @@ $footer-mobile: 15px;
         text-decoration: none;
         white-space: nowrap;
         &:hover{
-          color: $blue;
+          color: $yellow;
         }
       }
     }  
@@ -58,7 +69,7 @@ $footer-mobile: 15px;
 
 @media (max-width: 768px) { //sticky footer in mobile
   body{
-    padding-bottom: $footer-mobile * 4;
+    padding-bottom: 80px;
   }
   .footer {
     position: fixed;
@@ -66,6 +77,10 @@ $footer-mobile: 15px;
     bottom:0;
     right:0;
     left:0;
+
+    &:before{
+      background-image: url(/images/grass-mobile.svg);
+    }
 
     .container{
       line-height: $footer-mobile;

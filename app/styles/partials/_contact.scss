@@ -1,0 +1,26 @@
+a{
+	color: black;
+}
+
+.contactBox{
+	width: 33.33%;
+	background-color: $green;
+	display: inline-block;
+	text-align: center;
+	padding: 30px;
+	transition: background, .2s, linear;
+
+	&:hover{
+		background-color: darken($green, 15%) !important;
+	}
+}
+
+.contactBox:nth-child(even){
+	background-color: darken($green, 10%);
+}
+
+@media (max-width: 768px) {
+	.contactBox{
+		width: 100%;
+	}
+}

@@ -1,4 +1,4 @@
-
+"use strict";
 
 //grass originally by Roman Taraban #scriptkiddie
 
@@ -10,13 +10,13 @@ var canvas   = document.getElementById('grass'),
 
 var drawer = function(){
   //originally made background white
-  //ctx.fillStyle="#222";
+  //ctx.fillStyle='#222';
   ctx.clearRect(0,0,w,h);
   stack.forEach(function(el){
       el();  
-  })
+  });
   requestAnimationFrame(drawer);
-}
+};
 var anim = function(){
   var x = 0, y = 0;
   //tallness of blades * variable + min 
@@ -26,7 +26,7 @@ var anim = function(){
   //speed of blade growth
   var speed = Math.random()*1;  
   var position = Math.random()*w-w/2;
-  var c = function(l,u){return Math.round(Math.random()*(u||255)+l||0);}
+  var c = function(l,u){return Math.round(Math.random()*(u||255)+l||0);};
   
   //color of grass    
   var color = 'rgb('+c(125,50)+','+c(225,80)+','+c(80,50)+')';
@@ -40,7 +40,7 @@ var anim = function(){
     ctx.save();
     
     ctx.strokeWidth=10;
-    ctx.translate(w/2+position,h)
+    ctx.translate(w/2+position,h);
     ctx.fillStyle=color;
     
     ctx.beginPath();
@@ -50,8 +50,8 @@ var anim = function(){
     //ctx.closePath();?
     ctx.fill();
     
-    ctx.restore()
-  }    
+    ctx.restore();
+  };    
 };
 //number of blades it makes
 for(var x = 0; x<(w/7);x++){stack.push(anim());}

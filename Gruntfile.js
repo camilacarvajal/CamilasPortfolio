@@ -21,7 +21,7 @@ module.exports = function (grunt) {
   // Configurable paths
   var config = {
     app: 'app',
-    dist: 'dist'
+    dist: 'public_html'
   };
 
   // Define the configuration for all the tasks
@@ -58,6 +58,10 @@ module.exports = function (grunt) {
       styles: {
         files: ['<%= config.app %>/styles/{,*/}*.css'],
         tasks: ['newer:copy:styles', 'postcss']
+      },
+      handlebars: {
+        files: ['app/scripts/{,*/}*.hbs'],
+        tasks: ['handlebars:dist']
       }
     },
 
@@ -119,8 +123,8 @@ module.exports = function (grunt) {
         httpFontsPath: '/styles/fonts',
         relativeAssets: false,
         assetCacheBuster: false,
-        debugInfo: false
-        //                outputStyle: 'compressed'
+        //debugInfo: false,
+        require: 'susy'
       },
       dist: {
         options: {
@@ -199,7 +203,8 @@ module.exports = function (grunt) {
         sourceMap: true,
         sourceMapEmbed: true,
         sourceMapContents: true,
-        includePaths: ['.']
+        includePaths: ['.'],
+        require: 'susy'
       },
       dist: {
         files: [{
@@ -232,7 +237,7 @@ module.exports = function (grunt) {
       dist : {
         files: {
 
-          'dist/images/svg-defs.svg': ['<%= config.app %>/images/svgs/*.svg'],
+          '<%= config.dist %>/images/svg-defs.svg': ['<%= config.app %>/images/svgs/*.svg'],
         }
       },
       serve : {
@@ -264,14 +269,18 @@ module.exports = function (grunt) {
 
     // Automatically inject Bower components into the HTML file
     wiredep: {
-      app: {
-        src: ['<%= config.app %>/index.html'],
-        exclude: ['bootstrap.js'],
-        ignorePath: /^(\.\.\/)*\.\./
+      task: {
+        src: [
+          '<%= config.app %>/styles/main.scss',
+          '<%= config.app %>/*.html'
+        ]
       },
-      compass: {
-        src: ['<%= config.app %>/styles/{,*/}*.{scss,sass}']
-      }
+      dist: {
+        src: [
+          '<%= config.dist %>/styles/*.css',
+          '<%= config.dist %>/*.html'
+        ]
+      },
     },
 
     // Renames files for browser caching purposes
@@ -356,7 +365,19 @@ module.exports = function (grunt) {
         }]
       }
     },
-
+    // Make sure code styles are up to par and there are no obvious mistakes
+    jshint: {
+      options: {
+        jshintrc: '.jshintrc',
+        reporter: require('jshint-stylish')
+      },
+      all: [
+        'Gruntfile.js',
+        '<%= config.app %>/scripts/{,*/}*.js',
+        '!<%= config.app %>/scripts/vendor/*',
+        'test/spec/{,*/}*.js'
+      ]
+    },
     // By default, your `index.html`'s <!-- Usemin block --> will take care
     // of minification. These next options are pre-configured if you do not
     // wish to use the Usemin blocks.
@@ -370,18 +391,27 @@ module.exports = function (grunt) {
              }
          }
     },
-     uglify: {
+    uglify: {
       dist: {
          files: {
-           '<%= config.dist %>/scripts/scripts.js': [
-             '<%= config.dist %>/scripts/scripts.js'
+           '<%= config.dist %>/scripts/plugins.js': [
+             '<%= config.app %>/scripts/*.js'
            ]
          }
        }
      },
-     concat: {
-       dist: {}
-     },
+    concat: {
+      dist: {
+        files: [
+          {
+            dest: '<%= config.dist %>/scripts/app.js',
+            src: [
+              '<%= config.app %>/scripts/*.js'
+            ]
+          }
+        ]
+      }
+    },
 
     // Copies remaining files to places other tasks can use
     copy: {
@@ -409,6 +439,20 @@ module.exports = function (grunt) {
         cwd: '<%= config.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      }
+    },
+
+    handlebars: {
+      dist: {
+        options: {
+          namespace: 'JST',
+          processName: function(filePath){
+            return filePath.replace('<%= config.app %>/scripts/', '').replace('.hbs', '');
+          }
+        },
+        files: {
+          '<%= config.app %>/scripts/templates.js': '<%= config.app %>/scripts/{,*/}*.hbs'
+        }
       }
     },
 
@@ -475,7 +519,7 @@ module.exports = function (grunt) {
       'clean:server',
       'concurrent:server',
       'svgstore:serve',
-      'wiredep',
+      'wiredep:task',
       'postcss',
       'assemble',
       'browserSync:livereload',
@@ -511,7 +555,7 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'postcss',
     'concat',
-    'wiredep',
+    'wiredep:dist',
     'cssmin',
     'uglify',
     'copy:dist',

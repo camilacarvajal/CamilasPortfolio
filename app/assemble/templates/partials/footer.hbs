@@ -7,30 +7,20 @@ component: footer
 <footer class="footer navbar navbar-fixed-bottom">
 	<div class="container">
 		<ul>
-			<li><a href="\index.html">
-				<svg class="icon">
-				  <image xlink:href="../images/home.svg" src="../images/menu-icon.png" alt="Home" class="icon shape-home" width="45" height="45" />
-				</svg>
-				Home
-			</a></li><!--<img src="../images/code.svg" alt="Computer Science" class="icon shape-code">
-						--><li><a href="\development.html">
-				<svg class="icon">
-				  <image xlink:href="../images/code.svg" src="../images/menu-icon.png" width="45" height="45" />
-				</svg>
-				Dev
-			</a></li><!--
-			--><li><a href="\design.html">
-				<svg class="icon">
-				  <image xlink:href="../images/pencil.svg" src="../images/menu-icon.png" alt="Design" class="icon shape-pencil" width="45" height="45" />
-				</svg>
-				Design
-			</a></li><!--
-			--><li><a href="\contact.html">
-				<svg class="icon">
-				  <image xlink:href="../images/mail.svg" src="../images/menu-icon.png" alt="Contact" class="icon shape-mail" width="45" height="45" />
-				</svg>
-				Contact
-			</a></li>
-		</ul>
+			<li>
+				<a href="\index.html">
+					<svg class="icon">
+					  <image xlink:href="../images/home.svg" src="../images/menu-icon.png" alt="Home" class="icon shape-home" width="45" height="45" />
+					</svg>
+					Home
+				</a>
+			</li>{{~#withSort pages "data.sort" dir="asc"~}}{{~#is data.section "homepage"~}}<li>
+						<a href="{{relative ../../page.dest this.dest}}">
+							<svg class="icon">
+							  <image xlink:href="../images/{{data.title}}.svg" alt="Work" src="../images/menu-icon.png" width="45" height="45" />
+							</svg>
+							{{data.title}}
+						</a>
+					</li>{{/is}}{{/withSort}}</ul>
 	</div> 
 </footer>
