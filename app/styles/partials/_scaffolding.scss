@@ -1,7 +1,8 @@
 body{
   height: 100%;
   margin:0;
-  background-color:$cream;
+  background: $cream;
+  //background: linear-gradient( 180deg, $cream 60%, $orange 80%, $red 100%);
 }
 
 .p-section{

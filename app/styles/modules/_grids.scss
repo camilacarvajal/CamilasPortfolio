@@ -34,12 +34,12 @@ $susy: (
 
 .contact{
   @media (min-width: 700px) {
-    @include span(6); 
+    @include span(4); 
   }
 }
 
 .lastContact{
   @media (min-width: 700px) {
-    @include span(6 last); 
+    @include span(4 last); 
   }
 }

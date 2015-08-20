@@ -1,5 +1,5 @@
 body{
-  padding-top:$footer-height;
+  padding-top:$footer-height + 28px;
 }
 .nav {
   background-color: $red;
@@ -30,16 +30,10 @@ body{
     display: inline-block;
     vertical-align: top;
 
-    transition: background, .2s, linear;
+    transition: background, .7s, linear;
 
-    &.current {
-      a {
-        font-weight: bold;
-      }
-    }
-    &:hover,
-    &.current{
-      background: lighten($red, 7%);
+    &:hover, .current{
+      background: darken($red, 7%);
       //opacity: .8;
       //text-shadow: 5px 5px 4px $white;
     }

@@ -15,7 +15,7 @@
   z-index:0;
   opacity: 0.3;
   position: relative;
-  top:5px;
+  top:-23px;
 }
 
 /*Canvas Stuff*/
@@ -38,22 +38,6 @@ canvas{
 /* Name Fade in Stuff*/
 #center{
   height:$heroHeight;
-}
-
-#Name{
-  z-index:1;
-  width: 100%;
-  position: absolute;
-  text-align: center;
-  color: $white;
-  height: 280px;
-  top: 20%;
-  font-family: 'Pacifico', sans-serif;
-  font-weight: 400;
-  word-spacing: .25rem;
-  font-size: 4em;
-  animation: fadeUpIn 3s; 
-  -webkit-animation: fadeUpIn 3s; /* Safari and Chrome */
 }
 
 #Info{

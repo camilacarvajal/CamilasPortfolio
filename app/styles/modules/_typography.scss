@@ -51,6 +51,24 @@ p{
   font-weight: 400;
 }
 
+ul{
+  text-align: left;
+}
+
+.fadeDown{
+  z-index:1;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  top: 20%;
+  font-family: 'Pacifico', sans-serif;
+  font-weight: 400;
+  word-spacing: .25rem;
+  font-size: 4em;
+  animation: fadeUpIn 3s; 
+  -webkit-animation: fadeUpIn 3s; /* Safari and Chrome */
+}
+
 .verticalCenter{
   line-height: $heroHeight;
   h1{

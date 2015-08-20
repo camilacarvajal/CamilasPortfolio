@@ -5,6 +5,9 @@ component: navbar
 ================================================== -->
 <header class="nav">
 	<div class="container"><a href="index.html" class="logo">Camila Carvajal</a>
-		<ul>{{~#withSort pages "data.sort" dir="asc"~}}{{~#is data.section "homepage"~}}<li><a href="{{relative ../../page.dest this.dest}}">{{data.title}}</a></li>{{/is}}{{/withSort}}</ul>
+		<ul>{{~#withSort pages "data.sort" dir="asc"~}}{{~#is data.section "homepage"~}}<!-- 
+		!--><li><a href="{{relative ../../page.dest this.dest}}" class="
+		{{#is ../../page.title data.title}}current{{/is}}">{{data.title}}</a></li><!-- 
+		!-->{{/is}}{{/withSort}}</ul>
 	</div> 
 </header>

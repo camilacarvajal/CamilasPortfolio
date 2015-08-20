@@ -1,14 +1,14 @@
 
-$red:       #D14334;
-$orange:    #f79441;
-$yellow:	#ffc738;
+$red:       #A84932;
+$orange:    #E08651;
+$yellow:	#FFB03B;
 $green:		#B3E099;
-$blue:      #028F76;
+$blue:      #36A17E;
 $darkBlue:	#13747D;
 $gray:      #9D968D;
-$black:     #1C2130;
-$white:     #FFFFFF;
-$cream:		#FFEAAD;
+$black:     #45332F;
+$white:     #F5EDE0;
+$cream:		#f7d278;
 
 .color--red{
   color: $red;
@@ -41,3 +41,9 @@ $cream:		#FFEAAD;
 .color--black{
   color: $black;
 }
+
+
+.color--cream{
+  color: $cream;
+}
+
