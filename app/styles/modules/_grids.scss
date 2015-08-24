@@ -20,25 +20,13 @@ $susy: (
   @include container;
 }
 
-.work{
+.work, .contact{
   @media (min-width: 700px) {
     @include span(4); 
   }
 }
 
-.lastWork{
-  @media (min-width: 700px) {
-    @include span(4 last); 
-  }
-}
-
-.contact{
-  @media (min-width: 700px) {
-    @include span(4); 
-  }
-}
-
-.lastContact{
+.lastWork, .lastContact{
   @media (min-width: 700px) {
     @include span(4 last); 
   }

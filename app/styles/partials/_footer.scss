@@ -1,4 +1,4 @@
-$footer-height : 40px;
+$footer-height : 30px;
 $footer-mobile: 5px;
 
 .footer {
@@ -45,7 +45,7 @@ $footer-mobile: 5px;
       display: inline-block;
       vertical-align: top;
       line-height: $footer-height;
-      padding: 10px 0;
+      padding: 3px 0 8px 0;
 
       &:hover{
         color: $blue;

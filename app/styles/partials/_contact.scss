@@ -1,9 +1,5 @@
-a{
-	color: black;
-}
-
 .contact, .lastContact{
-	background-color: $blue;
+	background-color: $black;
 	color: $white;
 	text-align: center;
 	padding: 30px;
@@ -13,14 +9,14 @@ a{
 	//border: 5px solid $red;
 	
 	&:hover{
-		background-color: lighten($blue, 7%) !important;
+		background-color: $blue;
 		h2{
 			background: lighten($white, 7%);
 		}
 	}
 
 	h2{
-		background: $white;
+		background: $yellow;
 		border-radius: 3px;
 		color: $black;
 		padding: 10px 0;
@@ -39,7 +35,7 @@ a{
 }
 
 .contactBox{
-	width: 33.33%;
+	width: 50%;
 	background-color: $yellow;
 	display: inline-block;
 	text-align: center;
