@@ -8,19 +8,28 @@ component: footer
 	<div class="container">
 		<ul>
 			<li>
-				<a href="\index.html">
+				<a href="#home">
 					<svg class="icon">
 					  <image xlink:href="../images/home.svg" src="../images/menu-icon.png" alt="Home" class="icon shape-home" width="45" height="45" />
 					</svg>
 					Home
 				</a>
-			</li>{{~#withSort pages "data.sort" dir="asc"~}}{{~#is data.section "homepage"~}}<li>
-						<a href="{{relative ../../page.dest this.dest}}">
-							<svg class="icon">
-							  <image xlink:href="../images/{{data.title}}.svg" alt="Work" src="../images/menu-icon.png" width="45" height="45" />
-							</svg>
-							{{data.title}}
-						</a>
-					</li>{{/is}}{{/withSort}}</ul>
+			</li><!--
+		!--><li><a href="#work">
+				<svg class="icon">
+					<image xlink:href="../images/work.svg" alt="Work" src="../images/menu-icon.png" width="45" height="45" />
+				</svg>
+				Work</a></li><!-- 
+		!--><li><a href="#resume">
+				<svg class="icon">
+					<image xlink:href="../images/resume.svg" alt="Work" src="../images/menu-icon.png" width="45" height="45" />
+				</svg>
+				Resume</a></li><!-- 
+		!--><li><a href="#contact">
+				<svg class="icon">
+					<image xlink:href="../images/contact.svg" alt="Work" src="../images/menu-icon.png" width="45" height="45" />
+				</svg>
+				Contact</a></li><!-- 
+		!--></ul>
 	</div> 
 </footer>

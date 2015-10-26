@@ -1,3 +1,17 @@
+$('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+        || location.hostname == this.hostname) {
+
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+           if (target.length) {
+             $('html,body').animate({
+                 scrollTop: target.offset().top
+            }, 1000);
+            return false;
+        }
+    }
+});
 "use strict";
 
 //grass originally by Roman Taraban #scriptkiddie
@@ -147,6 +161,19 @@ var sketch = Sketch.create({
 // jshint devel:true
 //console.log('\'Allo \'Allo!');
 
+$(".read-more-expand").hide();//Showing and hiding done in javascript in case Javascript is disabled.
+$(".read-more-button").show();
+
+$(".read-more-button").click(function(){
+  var me = $(this).toggleClass("open"),
+      txt = me.is('.open') ? '- hide' : '+ read more';
+  me.text(txt);
+  $(".read-more-expand").slideToggle();
+}); 
+
+  
+
+ 
 "use strict";
 
 this["JST"] = this["JST"] || {};

@@ -4,10 +4,11 @@ component: navbar
 <!-- Navbar component
 ================================================== -->
 <header class="nav">
-	<div class="container"><a href="index.html" class="logo">Camila Carvajal</a>
-		<ul>{{~#withSort pages "data.sort" dir="asc"~}}{{~#is data.section "homepage"~}}<!-- 
-		!--><li><a href="{{relative ../../page.dest this.dest}}" class="
-		{{#is ../../page.title data.title}}current{{/is}}">{{data.title}}</a></li><!-- 
-		!-->{{/is}}{{/withSort}}</ul>
+	<div class="container"><a href="#home" class="logo">Camila Carvajal</a>
+		<ul><!--
+		!--><li><a href="#work">Work</a></li><!-- 
+		!--><li><a href="#resume">Resume</a></li><!-- 
+		!--><li><a href="#contact">Contact</a></li><!-- 
+		!--></ul>
 	</div> 
 </header>

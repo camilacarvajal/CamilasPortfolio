@@ -1,5 +1,5 @@
 .contact, .lastContact{
-	background-color: $black;
+	background-color: $blue;
 	color: $white;
 	text-align: center;
 	padding: 30px;
@@ -9,14 +9,13 @@
 	//border: 5px solid $red;
 	
 	&:hover{
-		background-color: $blue;
 		h2{
-			background: lighten($white, 7%);
+			color: $yellow;
 		}
 	}
 
 	h2{
-		background: $yellow;
+		background: $white;
 		border-radius: 3px;
 		color: $black;
 		padding: 10px 0;

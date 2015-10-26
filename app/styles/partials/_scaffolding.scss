@@ -11,7 +11,7 @@ body{
 
 .anchor{
   position: absolute;
-  margin-top: -150px;
+  margin-top: -80px;
 }
 
 img{
@@ -29,4 +29,9 @@ table{
 
 .rounded{
   border-radius: 100%;
+}
+
+.no--spacing{
+  margin: 0 !important;
+  padding: 0 !important;
 }

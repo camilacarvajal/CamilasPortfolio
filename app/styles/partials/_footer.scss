@@ -2,7 +2,7 @@ $footer-height : 30px;
 $footer-mobile: 5px;
 
 .footer {
-  background: $blue;
+  background: $red;
   color: $white;
   position: relative;
 
@@ -20,6 +20,7 @@ $footer-mobile: 5px;
   .container{
     line-height: $footer-height;
     position: relative;
+    padding-top: 10px;
   }
 
   p{

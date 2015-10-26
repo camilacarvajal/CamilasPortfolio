@@ -13,6 +13,14 @@ h1,h2,h3,h4,h5{
 }
 
 h1{
+  //font-family: 'Pacifico', sans-serif;
+  color: $black;
+  font-size: 4em;
+  line-height: 1em;
+  text-align:center;
+}
+
+h2{
   font-family: 'Pacifico', sans-serif;
   color: $red;
   font-size: 2em;
@@ -38,7 +46,6 @@ p{
   text-align: left;
   line-height: 1.7em;
   letter-spacing: -.05;
-  margin: 0 0 1.5em;
   color: $black;
   
   a{
@@ -59,32 +66,37 @@ ul{
   z-index:1;
   width: 100%;
   position: absolute;
-  text-align: center;
-  top: 20%;
-  font-family: 'Pacifico', sans-serif;
-  font-weight: 400;
-  word-spacing: .25rem;
-  font-size: 4em;
   animation: fadeUpIn 3s; 
   -webkit-animation: fadeUpIn 3s; /* Safari and Chrome */
 }
 
-.verticalCenter{
-  line-height: $heroHeight;
-  h1{
-    width: 100%;
-    font-size: 4em;
-    text-shadow: 3px 3px $black;
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;  
-  }
-  @media (max-width: 768px) {
-    line-height: $heroMobile;
-    h1{
-      font-size: 3em;
-    }
-  }
+.fadeUp{
+  animation: fadeUpIn 1s; 
+  -webkit-animation: fadeUpIn 1s; /* Safari and Chrome */
+}
+
+.text--centered{
+  text-align: center;
+}
+
+.text--right{
+  text-align: right;
+}
+
+.text--left{
+  text-align: left;
+}
+
+.shadowed{
+  text-shadow: 3px 3px $black;
+}
+
+.pacifico{
+  font-family: 'Pacifico', sans-serif;
+}
+
+.layered--title{
+  margin-bottom:-12px;
 }
 
 .smallVerticalCenter{
